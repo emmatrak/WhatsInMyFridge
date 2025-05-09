@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #121212;
+    color: #ffffff;
+    line-height: 1.8;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #50b9ff;
+    margin-bottom: 20px;
+}
+
+p, li {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+ul, ol {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+a {
+    color: #50b9ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #00c8ff;
+    text-decoration: underline;
+}
+
+strong {
+    color: #50b9ff;
+}
+/*Button styleing*/
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px; /* Button padding */
+    background: #50c2ff; /* Button background */
+    color: #fff; /* Button text color */
+    border-radius: 5px; /* Rounded edges */
+    text-decoration: none;
+    transition: background 0.3s ease; /* Background transition */
+}
+
+.btn:hover {
+    background: #00c8ff; /* Darker orange on hover */
+}
+
+section {
+    padding: 60px 40px; /* Increased section padding */
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsInMyFridge</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>WhatsInMyFridge</h1>
+	    <button onclick="location.href='wif.php'">Home</button>
+	</nav>
+    </header>
+
+    <form method="GET" action="findRecipes.php">
+        <h2>Find Recipes</h2>
+        <p>Select the ingredients you have:</p>
+	<hr> 
+        <!-- Protein Section -->
+        <div id="Protein" class="checkbox-container">
+            <h3>Protein Sources</h3>
+            <div class="checkbox-grid">
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "1" id="Eggs"><label for="Eggs">Eggs</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "2" id="Chicken"><label for="Chicken">Chicken</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "3" id="Tuna"><label for="Tuna">Tuna</label></div>
+                <div class="check-boxitem"><input type="checkbox" name = "ingredients[]" value = "4" id="Salmon"><label for="Salmon">Salmon</lable></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "5" id="Yogurt"><label for="Yogurt">Yogurt</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "6" id="Tofu"><label for="Tofu">Tofu</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "7" id="Meat-sliced"><label for="Meat-sliced">Meat(sliced)</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "8" id="Lentils"><label for="Lentils">Lentils</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "9" id="nut-butter"><label for="nut-butter">Nut Butter</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "10" id="nuts"><label for="nuts">Nuts</label></div>
+            </div>
+        </div>
+	<hr> 
+        <!-- Vegetables -->
+        <div id="Vegetables" class="checkbox-container">
+            <h3>Vegetables</h3>
+            <div class="checkbox-grid">
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "11" id="Spinach"><label for="Spinach">Spinach</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "12" id="Peppers"><label for="Peppers">Peppers</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "13" id="Onions"><label for="Onions">Onions</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "14" id="Lettuce"><label for="Lettuce">Lettuce</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "15" id="Cucumbers"><label for="Cucumbers">Cucumbers</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "16" id="Tomatoes"><label for="Tomatoes">Tomatoes</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "17" id="Zucchini"><label for="Zucchini">Zucchini</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "18" id="Garlic"><label for="Garlic">Garlic</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "19" id="Carrot"><label for="Carrot">Carrot</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "20" id="Celery"><label for="Celery">Celery</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "21" id="Mixed-Vegetables"><label for="Mixed-Vegetables">Mixed Vegetables</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "22" id="Parsley"><label for="Parsley">Parsley</label></div>
+		<div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "23" id="Basil"><label for="Basil">Basil</label></div>
+		<div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "24" id="Peas"><label for="Peas">Peas</label></div>
+		<div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "25" id="Califlower"><label for="Califlower">Califlower</label></div>
+		<div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "26" id="Califlower-Rice"><label for="Califlower-Rice">Califlower Rice</label></div>
+		<div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "27" id="chick-peas"><label for="chick-peas">Chick Peas</label></div>
+		<div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "28" id="potato"><label for="potato">Potato</label></div>
+            </div>
+        </div>
+	<hr> 
+        <!-- Fruits -->
+        <div id="Fruits" class="checkbox-container">
+            <h3>Fruits<h3>
+            <div class="checkbox-grid">
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "29" id="Lemon"><label for="Lemon">Lemon</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "30" id="Banana"><label for="Banana">Banana</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "31" id="Strawberries"><label for="Strawberries">Strawberries</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "32" id="Apple"><label for="Apple">Apple<label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "33" id="Berries"><label for="Berries">Berries</label></div>
+            </div>
+        </div>
+	<hr> 
+        <!-- Grains and Carbs -->
+        <div id="grains" class="checkbox-container">
+            <h3>Grains and Carbs</h3>
+            <div class="checkbox-grid">
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "34" id="oats"><label for="oats">Oats</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "35" id="flour"><label for="flour">Flour</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "36" id="rice-krispies"><label for="rice-krispies">Rice Krispies</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "37" id="graham-cracker"><label for="graham-cracker">Graham cracker</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "38" id="granola"><label for="granola">Granola</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "39" id="quinoa"><label for="quinoa">Quinoa</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "40" id="Rice"><label for="Rice">Rice</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "41" id="bread"><label for="bread">Bread</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "42" id="tortilla"><label for="tortilla">Tortilla</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "43" id="instant-ramen"><label for="instant-ramen">Instant ramen noodles</label></div>
+		<div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "44" id="pasta"><label for="pasta">Pasta</label></div>
+		<div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "45" id="pie-crust"><label for="pie-crust">Pie Crust</label></div>
+
+            </div>
+        </div>
+	<hr> 
+        <!-- Dairy and Alternates -->
+        <div id="dairy" class="checkbox-container">
+            <h3>Dairy and Alternates</h3>
+            <div class="checkbox-grid">
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "46" id="Almond-milk"><label for="Almond-milk">Almond Milk</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "47" id="Milk"><label for="Milk">Milk</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "48" id="Cottage-cheese"><label for="Cottage-cheese">Cottage Cheese</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "49" id="Cheese"><label for="Cheese">Cheese<label></div>
+	            <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "50" id="Butter"><label for="Butter">Butter<label></div>
+		        <div class="checkbox-item"> <input type="checkbox" name = "ingredients[]" value = "51" id="Cream"> <label for="Cream"> Cream <label></div>
+            </div>
+        </div>
+	<hr> 
+        <!-- Sauces & Liquid Ingredients Section -->
+        <div id="sauces" class="checkbox-container">
+            <h3>Sauces & Liquid Ingredients</h3>
+            <div class="checkbox-grid">
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "52" id="olive-oil"><label for="olive-oil">Olive oil</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "53" id="vegetable-oil"><label for="vegetable-oil">Vegetable oil</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "54" id="soy-sauce"><label for="soy-sauce">Soy Sauce</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "55" id="mayo"><label for="mayo">Mayo</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "56" id="marinara-sauce"><label for="marinara-sauce">Marinara sauce</label></div>
+		<div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "57" id="mustard"><label for="mustard">Mustard</label></div>
+            </div>
+        </div>
+	<hr> 
+        <!-- Sweeteners -->
+        <div id="sweeteners" class="checkbox-container">
+            <h3>Sweeteners</h3>
+            <div class="checkbox-grid">
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "58" id="sugar"><label for="sugar">Sugar</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "59" id="Coco-powder"><label for="Coco-powder">Coco Powder</label></div>
+		<div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "60" id="Chocolate"><label for="Chocolate">Chocolate</label></div>
+		<div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "61" id="Honey"><label for="Honey">Honey</label></div>
+		<div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "62" id="Marshmellow"><label for="Marshmellow">Marshmellow</label></div>
+            </div>
+        </div>
+	<hr> 
+        <!-- Other -->
+        <div id="Other" class="checkbox-container">
+            <h3>Other</h3>
+            <div class="checkbox-grid">
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "63" id="Vegetable-broth"><label for="Vegetable-broth">Vegetable Broth</label></div>
+                <div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "64" id="Chicken-broth"><label for="Chicken-broth">Chicken Broth</label></div>
+		<div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "65" id="Baking-powder"><label for="Baking-powder">Baking Powder</label></div>
+		<div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "66" id="Cornstarch"><label for="Cornstarch">Cornstarch</label></div>
+		<div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "67" id="Cinnamon"><label for="Cinnamon">Cinnamon</label></div>
+		<div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "68" id="Garlic-powder"><label for="Garlic-powder">Garlic Powder</label></div>
+		<div class="checkbox-item"><input type="checkbox" name = "ingredients[]" value = "69" id="Paprika"><label for="Paprika">Paprika</label></div>
+
+            </div>
+        </div>
+	<hr> 
+        <!-- Cooking Device Section -->
+        <div id="Cooking Devices" class="checkbox-container">
+            <h3>Cooking Devices:</h3>
+	    <div class="checkbox-grid">
+		    <div class="checkbox-item"><input type="checkbox" name="devices[]" value = "1" id="oven"><label for="oven">Oven</label></div>
+		    <div class="checkbox-item"><input type="checkbox" name="devices[]" value = "2" id="stove"><label for="stove">Stove</label></div>
+		    <div class="checkbox-item"><input type="checkbox" name="devices[]" value = "3" id="hot-plate"><label for="hot-plate">Hot Plate</label></div>
+		    <div class="checkbox-item"><input type="checkbox" name="devices[]" value = "4" id="microwave"><label for="microwave">Microwave</label></div>
+		    <div class="checkbox-item"><input type="checkbox" name="devices[]" value = "5" id="airfryer"><label for="airfryer">Air Fryer</label></div>
+	    </div>
+	</div>
+	<hr>
+        <!-- Preferance Section -->
+        <div id="Dietary Preferences" class="checkbox-container"></div>
+            <h3>Dietary Preferences:</h3>
+	    <div class="checkbox-grid">
+		    <div class="checkbox-item"><input type="checkbox" name="diet[]" value = "1" id="vegan"><label for="vegan">Vegan</label></div>
+		    <div class="checkbox-item"><input type="checkbox" name="diet[]" value = "2" id="vegetarian"><label for="vegetarian">Vegetarian</label></div>
+		    <div class="checkbox-item"><input type="checkbox" name="diet[]" value = "3" id="low-calorie"><label for="low-calorie">Low Calorie</label></div>
+		    <div class="checkbox-item"><input type="checkbox" name="diet[]" value = "4" id="high-protein"><label for="high-protein">High Protein</label></div>
+		    <div class="checkbox-item"><input type="checkbox" name="diet[]" value = "5" id="gluten-free"><label for="gluten-free">Gluten-Free</label></div>
+		    <div class="checkbox-item"><input type="checkbox" name="diet[]" value = "6" id="dairy-free"><label for="dairy-free">Dairy-Free</label></div>
+		    <div class="checkbox-item"><input type="checkbox" name="diet[]" value = "7" id="nut-free"><label for="nut-free">Nut-Free</label></div></div>
+		    <div class="checkbox-item"><input type="checkbox" name="diet[]" value = "8" id="comfort-food"><label for="comfort-food">Comfort Food</label></div></div>
+
+	    </div>
+	 </div>
+
+        <div id="recipe-results"></div>
+	<input type="submit" value="Submit">
+    </form>
+
+    <input type="text" id="item" placeholder="Enter Ingredient">
+    <button onclick="addItem()">Add Ingredient</button>
+    <button onclick="fetchRecipes()">Fetch Recipe</button>
+
+    <div id="recipeOutput"></div>
+
+    <script src="spoonacular_api/recipe_retrieve.js"></script>
+
+
+
+</body>
+</html>
+

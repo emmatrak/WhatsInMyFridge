@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Whats in my Fridge</title>
+    <script>
+        // Function to handle favorite button clicks
+        function toggleFavorite(recipeTitle, recipeUrl) {
+            const recipeId = recipeTitle.toLowerCase().replace(/\s+/g, '-');
+            let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+            
+            // Check if already favorited
+            const existingIndex = favorites.findIndex(recipe => recipe.id === recipeId);
+            
+            if (existingIndex >= 0) {
+                // Remove from favorites
+                favorites.splice(existingIndex, 1);
+                alert('Removed from favorites!');
+            } else {
+                // Add to favorites
+                favorites.push({
+                    id: recipeId,
+                    title: recipeTitle,
+                    url: recipeUrl
+                });
+                alert('Added to favorites!');
+            }
+            
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+            updateFavoriteButtons();
+        }
+
+        // Function to update button states
+        function updateFavoriteButtons() {
+            const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+            document.querySelectorAll('.favorite-btn').forEach(btn => {
+                const recipeTitle = btn.getAttribute('data-title');
+                const recipeId = recipeTitle.toLowerCase().replace(/\s+/g, '-');
+                const isFavorite = favorites.some(recipe => recipe.id === recipeId);
+                btn.textContent = isFavorite ? '💔 Remove Favorite' : '❤️ Favorite';
+            });
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            updateFavoriteButtons();
+        });
+    </script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="wif.php">Home</a></li>
+            <li><a href="favorites.html">My Favorites</a></li>
+        </ul>
+    </nav>
+    
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/veggieStirFry.html">Veggie Stir-Fry</a>
+        <button class="favorite-btn" data-title="Veggie Stir-Fry" onclick="toggleFavorite('Veggie Stir-Fry', 'https://www.cs.drexel.edu/~eit24/veggieStirFry.html')">❤️ Favorite</button>
+    </p>
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/eggScarmbleVeg.html">Scrambled Eggs with Veggies</a>
+        <button class="favorite-btn" data-title="Scrambled Eggs with Veggies" onclick="toggleFavorite('Scrambled Eggs with Veggies', 'https://www.cs.drexel.edu/~eit24/eggScarmbleVeg.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/greekYogurt.html">Greek Yogurt with Toppings</a>
+        <button class="favorite-btn" data-title="Greek Yogurt with Toppings" onclick="toggleFavorite('Greek Yogurt with Toppings', 'https://www.cs.drexel.edu/~eit24/greekYogurt.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/tunaSaladWrap.html">Tuna Salad Wrap</a>
+        <button class="favorite-btn" data-title="Tuna Salad Wrap" onclick="toggleFavorite('Tuna Salad Wrap', 'https://www.cs.drexel.edu/~eit24/tunaSaladWrap.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/chickpeaSalad.html">Chickpea Salad</a>
+        <button class="favorite-btn" data-title="Chickpea Salad" onclick="toggleFavorite('Chickpea Salad', 'https://www.cs.drexel.edu/~eit24/chickpeaSalad.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/zuchNoodles.html">Zucchini Noodles with Marinara</a>
+        <button class="favorite-btn" data-title="Zucchini Noodles with Marinara" onclick="toggleFavorite('Zucchini Noodles with Marinara', 'https://www.cs.drexel.edu/~eit24/zuchNoodles.html')">❤️ Favorite</button>
+    </p>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/oatmeal.html">Oatmeal with Bananas and Peanut Butter</a>
+        <button class="favorite-btn" data-title="Oatmeal with Bananas and Peanut Butter" onclick="toggleFavorite('Oatmeal with Bananas and Peanut Butter', 'https://www.cs.drexel.edu/~eit24/oatmeal.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/cauliStirFry.html">Cauliflower Rice Stir Fry</a>
+        <button class="favorite-btn" data-title="Cauliflower Rice Stir Fry" onclick="toggleFavorite('Cauliflower Rice Stir Fry', 'https://www.cs.drexel.edu/~eit24/cauliStirFry.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/chickfry.html">Chicken and Veggie Stir Fry</a>
+        <button class="favorite-btn" data-title="Chicken and Veggie Stir Fry" onclick="toggleFavorite('Chicken and Veggie Stir Fry', 'https://www.cs.drexel.edu/~eit24/chickfry.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/soup.html">Lentil and Veggie Soup</a>
+        <button class="favorite-btn" data-title="Lentil and Veggie Soup" onclick="toggleFavorite('Lentil and Veggie Soup', 'https://www.cs.drexel.edu/~eit24/soup.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/riceKrispie.html">Peanut Butter and Chocolate Rice Krispie</a>
+        <button class="favorite-btn" data-title="Peanut Butter and Chocolate Rice Krispie" onclick="toggleFavorite('Peanut Butter and Chocolate Rice Krispie', 'https://www.cs.drexel.edu/~eit24/riceKrispie.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/iceCreamB.html">Banana Icecream</a>
+        <button class="favorite-btn" data-title="Banana Icecream" onclick="toggleFavorite('Banana Icecream', 'https://www.cs.drexel.edu/~eit24/iceCreamB.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/cookieDough.html">No Bake Cookie Dough Bites</a>
+        <button class="favorite-btn" data-title="No Bake Cookie Dough Bites" onclick="toggleFavorite('No Bake Cookie Dough Bites', 'https://www.cs.drexel.edu/~eit24/tomato_soup.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/chocStraw.html">Chocolate Dipped Frozen Strawberries</a>
+        <button class="favorite-btn" data-title="Chocolate Dipped Frozen Strawberries" onclick="toggleFavorite('Chocolate Dipped Frozen Strawberries', 'https://www.cs.drexel.edu/~eit24/chocStraw.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/mugCake.html">Microwave Chocolate Mug Cake</a>
+        <button class="favorite-btn" data-title="Microwave Chocolate Mug Cake" onclick="toggleFavorite('Microwave Chocolate Mug Cake', 'https://www.cs.drexel.edu/~eit24/mugCake.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/appleNacho.html">Apples Nachos</a>
+        <button class="favorite-btn" data-title="Apples Nachos" onclick="toggleFavorite('Apples Nachos', 'https://www.cs.drexel.edu/~eit24/appleNacho.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/smores.html">S'mores in a Mug</a>
+        <button class="favorite-btn" data-title="S'mores in a Mug" onclick="toggleFavorite('Smores in a Mug', 'https://www.cs.drexel.edu/~eit24/smores.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/yogparf.html">Yogurt Parfait</a>
+        <button class="favorite-btn" data-title="Yogurt Parfait" onclick="toggleFavorite('Yogurt Parfait', 'https://www.cs.drexel.edu/~eit24/yogparf.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/cinnamonSugarChips.html">Cinnamon Sugar Tortilla Chips</a>
+        <button class="favorite-btn" data-title="Cinnamon Sugar Tortilla Chips" onclick="toggleFavorite('Cinnamon Sugar Tortilla Chips', 'https://www.cs.drexel.edu/~eit24/cinnamonSugarChips.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/air-fryer-chicken-fajitas.html">Air Fryer Chicken Fajitas (15 minutes)</a>
+        <button class="favorite-btn" data-title="Air Fryer Chicken Fajitas (15 minutes)" onclick="toggleFavorite('Air Fryer Chicken Fajitas (15 minutes)', 'www.cs.drexel.edu/~eit24/air-fryer-chicken-fajitas.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/cottage-cheese-eggs-muffin.html">Cottage Cheese Eggs Muffin (20 minutes)</a>
+        <button class="favorite-btn" data-title="Cottage Cheese Eggs Muffin (20 minutes)" onclick="toggleFavorite('Cottage Cheese Eggs Muffin (20 minutes)', 'https://www.cs.drexel.edu/~eit24/cottage-cheese-eggs-muffin.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/air-fryer-salmon-bites.html">Air Fryer Salmon Bites (15 minutes)</a>
+        <button class="favorite-btn" data-title="Air Fryer Salmon Bites (15 minutes)" onclick="toggleFavorite('Air Fryer Salmon Bites (15 minutes)', 'https://www.cs.drexel.edu/~eit24/air-fryer-salmon-bites.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/cauliflower-fried-rice.html">Cauliflower Fried Rice (15 minutes)</a>
+        <button class="favorite-btn" data-title="Tomato Soup" onclick="toggleFavorite('Tomato Soup', 'https://www.cs.drexel.edu/~eit24/tomato_soup.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/vegan-lentil-soup.html">Vegan Lentil Soup (35 minutes)</a>
+        <button class="favorite-btn" data-title="Vegan Lentil Soup (35 minutes)" onclick="toggleFavorite('Vegan Lentil Soup (35 minutes)', 'https://www.cs.drexel.edu/~eit24/vegan-lentil-soup.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/air-fryer-crispy-tofu.html">Air Fryer Crispy Tofu (15 minutes)</a>
+        <button class="favorite-btn" data-title="Air Fryer Crispy Tofu (15 minutes)" onclick="toggleFavorite('Air Fryer Crispy Tofu (15 minutes)', 'https://www.cs.drexel.edu/~eit24/air-fryer-crispy-tofu.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/baked_potato.html">Baked Potato</a>
+        <button class="favorite-btn" data-title="Baked Potato" onclick="toggleFavorite('Baked Potato', 'https://www.cs.drexel.edu/~eit24/baked_potato.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/cheese_noodles.html">Cheese Noodles</a>
+        <button class="favorite-btn" data-title="Cheese Noodles" onclick="toggleFavorite('Cheese Noodles', 'https://www.cs.drexel.edu/~eit24/cheese_noodles.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/grilled_cheese.html">Grilled Cheese</a>
+        <button class="favorite-btn" data-title="Grilled Cheese" onclick="toggleFavorite('Grilled Cheese', 'https://www.cs.drexel.edu/~eit24/grilled_cheese.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/honey_butter_toast.html">Honey Butter Toast</a>
+        <button class="favorite-btn" data-title="Honey Butter Toast" onclick="toggleFavorite('Honey Butter Toast', 'https://www.cs.drexel.edu/~eit24/honey_butter_toast.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/mac_and_cheese.html">Mac and Cheese</a>
+        <button class="favorite-btn" data-title="Mac and Cheese" onclick="toggleFavorite('Mac and Cheese', 'https://www.cs.drexel.edu/~eit24/mac_and_cheese.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/pot_pie.html">Pot Pie</a>
+        <button class="favorite-btn" data-title="Pot Pie" onclick="toggleFavorite('Pot Pie', 'https://www.cs.drexel.edu/~eit24/pot_pie.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/quesadilla_nachos.html">Quesadilla Nachos</a>
+        <button class="favorite-btn" data-title="Quesadilla Nachos" onclick="toggleFavorite('Quesadilla Nachos', 'https://www.cs.drexel.edu/~eit24/quesadilla_nachos.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/ramen_upgrade.html">Ramen Upgrade</a>
+        <button class="favorite-btn" data-title="Ramen Upgrade" onclick="toggleFavorite('Ramen Upgrade', 'https://www.cs.drexel.edu/~eit24/ramen_upgrade.html')">❤️ Favorite</button>
+    </p>
+
+    <p>
+        <a href="https://www.cs.drexel.edu/~eit24/tomato_soup.html">Tomato Soup</a>
+        <button class="favorite-btn" data-title="Tomato Soup" onclick="toggleFavorite('Tomato Soup', 'https://www.cs.drexel.edu/~eit24/tomato_soup.html')">❤️ Favorite</button>
+    </p>
+</body>
+</html>
